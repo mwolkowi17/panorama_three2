@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+import { scene } from './index.js';
+import { panorama2 } from './panorama2.js';
 
 //panorama image
 
@@ -14,11 +16,11 @@ export const panorama1 = new THREE.Mesh(geometry, material);
 
 //navigation
 
-const navDiv = document.createElement('div');
-navDiv.className = 'label';
-navDiv.textContent = 'znacznik';
-navDiv.style.color = 'white';
-navDiv.style.fontSize = '1px'
+// const navDiv = document.createElement('div');
+// navDiv.className = 'label';
+// navDiv.textContent = 'znacznik';
+// navDiv.style.color = 'white';
+// navDiv.style.fontSize = '1px'
 
 const imageDiv = document.createElement('img');
 imageDiv.className = 'imagenav';
@@ -39,14 +41,11 @@ panorama1.add(navLabel)
 
 imageDiv.addEventListener('pointerdown', () => {
     console.log('click');
-    // scene.remove(mesh)
-    // //imageDiv.style.visibility='hidden'
-    // actionbutton.style.visibility='hidden'
+     scene.remove(panorama1);
+     imageDiv.style.visibility='hidden';
+     imageDivInfo.style.visibility='hidden';
 
-    // const mesh2 = create_panorama('./kawiarnia5.png')
-    // mesh2.add(create_nav(10,-10,30,'imagenav2'))
-
-    // scene.add(mesh2)
+   scene.add(panorama2)
 })
 
 // info 

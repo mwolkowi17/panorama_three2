@@ -8,7 +8,7 @@ import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 // import { create_nav } from './nav_function';
 // import { create_info } from './info_function';
 
-const scene = new THREE.Scene();
+export const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });

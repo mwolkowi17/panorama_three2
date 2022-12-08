@@ -1,7 +1,7 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls';
-import { mesh } from './panorama.js'
+import { panorama1 } from './panorama1';
 
 import { CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 // import { create_panorama } from './pan_function';
@@ -29,7 +29,7 @@ scene.background = new THREE.Color(0x000000);
 // mesh1.add(create_nav(1, -30, -30,'imagenav'));
 // mesh1.add(create_info(20, 0, -30,'infonav'))
 
-// scene.add(mesh1);
+scene.add(panorama1);
 
 camera.position.z = 5;
 const controls = new OrbitControls(camera, labelRenderer.domElement);

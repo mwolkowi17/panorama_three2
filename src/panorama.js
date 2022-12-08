@@ -5,8 +5,8 @@ const geometry = new THREE.SphereGeometry(500, 60, 40);
 // invert the geometry on the x-axis so that all of the faces point inward
 geometry.scale(- 1, 1, 1);
 
-let texture = new THREE.TextureLoader().load('./double_panoramic.png');
-export let material = new THREE.MeshBasicMaterial({ map: texture });
+const texture = new THREE.TextureLoader().load('./double_panoramic.png');
+const material = new THREE.MeshBasicMaterial({ map: texture });
 
 const navDiv = document.createElement('div');
 navDiv.className = 'label';
@@ -25,6 +25,7 @@ const navLabel = new CSS3DObject(imageDiv);
 navLabel.position.set(1, -30, -30);
 navLabel.element.style.overflow = 'visible';
 
-export let mesh = new THREE.Mesh(geometry, material);
+export const mesh = new THREE.Mesh(geometry, material);
 
 mesh.add(navLabel)
+

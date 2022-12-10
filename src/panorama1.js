@@ -44,11 +44,14 @@ imageDiv.addEventListener('pointerdown', () => {
      scene.remove(panorama1);
      imageDiv.style.visibility='hidden';
      imageDivInfo.style.visibility='hidden';
+     infoDiv.style.visibility='hidden';
 
-   scene.add(panorama2)
+   scene.remove(panorama1);
+   scene.add(panorama2);
+   
 })
 
-// info 
+// info nav
 
 const imageDivInfo = document.createElement('img');
 imageDivInfo.className = 'imageInfo1';
@@ -63,12 +66,9 @@ navLabelInfo.element.style.overflow = 'visible';
 
 panorama1.add(navLabelInfo)
 
-//info actiones
+//info display
 
-imageDivInfo.addEventListener('pointerdown', () => {
-  console.log('click_info');
-
-  const infoDiv = document.createElement('div');
+const infoDiv = document.createElement('div');
   infoDiv.className = 'label';
   infoDiv.textContent = 'znacznik';
   infoDiv.style.width = '30px';
@@ -81,6 +81,17 @@ imageDivInfo.addEventListener('pointerdown', () => {
   const infoLabel = new CSS3DObject(infoDiv);
   infoLabel.position.set(20, 0, -30);
   infoLabel.element.style.overflow = 'visible';
+  infoDiv.style.visibility='hidden';
+  
   navLabelInfo.add(infoLabel)
+
+//info actiones
+
+imageDivInfo.addEventListener('pointerdown', () => {
+  console.log('click_info');
+  infoDiv.style.visibility='visible';
+  imageDivInfo.style.visibility = 'hidden'
+
+  
 })
 

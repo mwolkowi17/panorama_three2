@@ -63,3 +63,24 @@ navLabelInfo.element.style.overflow = 'visible';
 
 panorama1.add(navLabelInfo)
 
+//info actiones
+
+imageDivInfo.addEventListener('pointerdown', () => {
+  console.log('click_info');
+
+  const infoDiv = document.createElement('div');
+  infoDiv.className = 'label';
+  infoDiv.textContent = 'znacznik';
+  infoDiv.style.width = '30px';
+  infoDiv.style.height = '30px';
+  infoDiv.style.backgroundColor = 'grey';
+
+  infoDiv.style.color = 'white';
+  infoDiv.style.fontSize = '1px';
+
+  const infoLabel = new CSS3DObject(infoDiv);
+  infoLabel.position.set(20, 0, -30);
+  infoLabel.element.style.overflow = 'visible';
+  navLabelInfo.add(infoLabel)
+})
+
